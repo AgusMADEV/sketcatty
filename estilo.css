@@ -1,79 +1,134 @@
 /* Basic Reset & Layout */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-    }
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
-    }
-    header h1 {
-      margin-bottom: 5px;
-    }
-    .container {
-      display: flex;
-      height: calc(100vh - 60px); /* Subtract header height */
-    }
-    nav {
-      background-color: #f0f0f0;
-      width: 220px;
-      padding: 10px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    }
-    nav button, nav label {
-      display: block;
-      margin-bottom: 10px;
-    }
-    nav button {
-      width: 100%;
-      padding: 10px;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      text-align: left;
-    }
-    nav label {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-    nav input[type="color"] {
-      width: 100%;
-      height: 40px;
-      border: none;
-      cursor: pointer;
-    }
-    main {
-      flex-grow: 1;
-      position: relative;
-    }
-    #drawingArea {
-      width: 100%;
-      height: 100%;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      cursor: crosshair;
-    }
-    
-    /* Optional: style for bounding box and handles */
-    .bbox {
-      fill: none;
-      stroke: #00f;
-      stroke-dasharray: 4;
-      pointer-events: none; /* Let the background capture the mouse, not the bounding box */
-    }
-    .handle {
-      fill: #00f;
-      stroke: #fff;
-      stroke-width: 1px;
-      cursor: pointer;
-    }
-    .rotate-handle {
-      fill: #f00;
-      cursor: alias; /* or move, or crosshair, or your preferred icon */
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #454545;
+  color: #FCDE90;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 120px); /* Subtract header height */
+}
+
+nav {
+  background-color: #454545;
+  width: 250px;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  color: #FCDE90;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-section, .color-section {
+  margin-bottom: 20px;
+}
+
+.tool-section h3, .color-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 1px solid #FCDE90;
+  padding-bottom: 10px;
+}
+
+nav button {
+  display: block;
+  margin-bottom: 10px;
+  color: #FCDE90;
+  background-color: #93688A;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+nav button:hover {
+  background-color: #7a5572;
+  transform: translateY(-2px);
+}
+
+nav label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+nav input[type="color"] {
+  width: 100%;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+main {
+  flex-grow: 1;
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#drawingArea {
+  width: 90%;
+  height: 90%;
+  border: 2px solid #454545;
+  background-color: #ffffff;
+  cursor: crosshair;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><rect width="20" height="20" fill="none" stroke="%23d3d3d3" stroke-width="0.5"/></svg>');
+}
+
+/* Optional: style for bounding box and handles */
+.bbox {
+  fill: none;
+  stroke: #93688A;
+  stroke-dasharray: 4;
+  pointer-events: none;
+}
+
+.handle {
+  fill: #93688A;
+  stroke: #fff;
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+.rotate-handle {
+  fill: #FCDE90;
+  cursor: alias;
+}
