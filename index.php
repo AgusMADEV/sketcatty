@@ -9,7 +9,7 @@
 
   <!-- Header -->
   <header>
-    <h1>Corporate Name / Logo</h1>
+    <h1>SketCatty - agusmadev</h1>
     <p>SVG Basic Shape Creator with Select & Transform</p>
   </header>
 
